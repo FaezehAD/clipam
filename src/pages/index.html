@@ -1,13 +1,828 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa-IR" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>clipam</title>
     <link rel="stylesheet" href="../../dist/output.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/style.css">
 
+</head>
+
+<body>
+    <div class="-my-4 pt-5"
+        style="background: linear-gradient(179.12deg, rgba(233, 245, 255, 0.8) 1.81%, rgba(255, 255, 255, 0) 22.47%);">
+        <div class="mar">
+            <div class="" x-data="{openMenu: false}" :class="openMenu ? 'overflow-hidden' : 'overflow-visible' ">
+                <header class="flex items-center justify-between md:justify-start md:relative mt-7">
+
+                    <button @click="openMenu = !openMenu" :aria-expanded="openMenu" aria-controls="mobile-navigation"
+                        aria-label="Navigation Menu" class="cursor-pointer w-1/12 md:hidden">
+                        <img class="xs:p-1 sm:p-2" src="/icons/mobile-btn.svg" alt="">
+                    </button>
+
+                    <a href="#">
+                        <img src="/images/logo.svg" alt="logo" class="w-28 xl:w-32 2xl:w-36">
+                    </a>
+
+                    <ul id="desk" class="hidden md:flex justify-between">
+                        <div class="flex">
+                            <li class="mr-12 xl:mr-16 2xl:mr-24">
+                                <a href="#">
+                                    قالب‌ها
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    بلاگ
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    درباره ما
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    تماس با ما
+                                </a>
+                            </li>
+                        </div>
+                        <div class="absolute top-0 left-0 flex mr-auto items-center">
+                            <li>
+                                <button class="pt-1 ml-7 xl:ml-11">
+                                    <img src="/icons/search.svg" alt="">
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    class="text-sm lg:text-base xl:text-lg px-8 py-2 xl:px-10 xl:py-4 rounded-md text-white"
+                                    style="background-color: rgba(119, 141, 232, 1);">
+                                    ورود یا ثبت نام
+                                </button>
+                            </li>
+
+                        </div>
+
+                    </ul>
+                </header>
+
+                <nav id="mobile-navigation" class="fixed top-0 right-0 bottom-0 left-0 backdrop-blur-xl z-10"
+                    :class="openMenu ? 'visible' : 'invisible' " x-cloak>
+
+                    <ul class="pt-14 text-white absolute top-0 right-0 bottom-0 w-3/4 xs:w-3/5 sm:w-1/2 py-4 bg-indigo bg-opacity-90 z-10 duration-500 transition-all"
+                        :class="openMenu ? 'translate-x-0' : 'translate-x-full'">
+
+                        <li class="">
+                            <a href="#">
+                                قالب‌ها
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                بلاگ
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                درباره ما
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                تماس با ما
+                            </a>
+                        </li>
+                        <div class="flex flex-col">
+                            <li>
+                                <button>
+                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="9.76663" cy="9.76663" r="8.98856" stroke="#FFFFFF"
+                                            stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M16.0183 16.4851L19.5423 20" stroke="#FFFFFF" stroke-width="2.3"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </button>
+                            </li>
+                            <li>
+                                <button class="text-indigo bg-white py-3 px-5 rounded-md">
+                                    ورود یا ثبت نام
+                                </button>
+                            </li>
+
+                        </div>
+                        <button class="absolute top-0 right-0 bottom-0 left-0 ml-7 mt-4" @click="openMenu = !openMenu"
+                            :aria-expanded="openMenu" aria-controls="mobile-navigation"
+                            aria-label="Close Navigation Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute top-2 left-2" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+        </div>
+
+        <div class="w-full relative">
+            <section class="adjustMarForNonAbs relative">
+
+                <div class="hidden lg:flex absolute rounded-full
+                w-5 h-5
+                xl:w-6 xl:h-6
+                3xl:w-7 3xl:h-7
+                bottom-40 -right-16
+                xl:-right-20
+                3xl:bottom-52 3xl:-right-24" style="background-color: rgba(255, 224, 242, 0.8);"></div>
+
+                <div class="hidden lg:flex absolute rounded-full
+                  w-4 h-4
+                  xl:w-5 xl:h-5
+                  2xl:w-6 2xl:h-6
+                  bottom-20 right-20
+                  xl:right-32 xl:bottom-20
+                  2xl:bottom-24
+                  3xl:bottom-16">
+                    <img src="/icons/green-diamond.svg" alt="">
+                </div>
+
+                <div class="hidden lg:flex absolute rounded-full
+                  w-4 h-4
+                  xl:w-5 xl:h-5
+                  2xl:w-6 2xl:h-6
+                  bottom-44 -left-20
+                  xl:-left-28
+                  2xl:-left-32">
+                    <img src="/icons/triangle.svg" alt="">
+                </div>
+
+                <div class="hidden lg:flex absolute rounded-full
+                  w-4 h-4
+                  xl:w-5 xl:h-5
+                  2xl:w-6 2xl:h-6
+                  top-16 right-24
+                  xl:right-32
+                  2xl:top-24
+                  3xl:top-28">
+                    <img src="/icons/pink-diamond.svg" alt="">
+                </div>
+
+                <div class="flex flex-col md:flex-row md:justify-between mx-auto w-full ">
+                    <div
+                        class="md:w-1/2 lg:w-1/2 xl:w-full md:max-w-xs flex flex-col items-center justify-center md:ml-5 md:mr-0 xl:ml-6 mx-auto">
+
+                        <img class="flex-1 w-3/4 xs:w-3/5 md:w-full
+                        pb-7 md:pb-6 xl:pb-8 2xl:pb-0 2xl:h-10
+                        md:pt-10 lg:pt-12 xl:pt-16
+                        max-w-xs text-right" src="/images/h1.svg" alt="">
+
+                        <p class="text-center  
+                        lg:-mt-4 xl:-mt-8 2xl:-mt-28
+                        mx-5 xs:mx-10 md:mx-0 
+                        md:mr-0
+                        pb-6 md:pb-6 xl:pb-10
+                        md:pr-0" style="color: rgba(57, 87, 132, 0.77);">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                            است،
+                            چاپگرها و
+                            متون
+                            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                        </p>
+                        <button class="btn rounded-md bg-indigo md:bgPurpleDark text-white md:button-shadow
+                            px-7 xs:px-12 md:px-6 lg:px-8 xl:px-11 xl:rounded-xl
+                            py-2 xs:py-3 
+                            mb-16">
+                            مشاهده قالب‌ها
+                        </button>
+                    </div>
+                    <div class="flex">
+                        <picture class="pb-12 md:p-0">
+                            <source id="desk" class="mr-auto" srcset="/images/mob.svg" media="(min-width: 768px)">
+                            <img id="mob" class="mr-auto 2xl:scale-105" src="/images/mob.svg" alt="">
+                        </picture>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+    <section id="video" class="md:hidden relative overflow-hidden flex flex-col items-center"
+        style=" background-color: #EAF6FF;">
+        <div class="mar">
+            <div class="w-3/5 xs:w-1/2 sm:w-2/5 mx-auto relative mt-8">
+                <img class="mb-7" src="/icons/video.svg" alt="">
+                <div class="bg-lightBlue w-3/5 h-2/5 absolute left-0 -bottom-sm"> </div>
+            </div>
+            <p class="text-center pb-16 px-5 xs:px-10" style="color: rgba(50, 77, 120, 1);">
+                این روزها بسیار رواج پیدا کرده و با داشتن یک و پردرآمد داشته باشید داشتن سای و اپلیکشن سایت خوب
+                میتوانید
+                یک
+                کسب و کار ۲۴ ساعته که یک سایت خوب دارد برای داشتن یک سایت خوب های زیادی کنید اما ما اینجا با اما
+                کمتر
+                کسی
+                است شما را راه یا باید سال ها تجربه کسب کنید یا هزینه تا با کوله باری از تجربه با کمترین هزینه سایت
+                اندازی
+                کنیم شما هستیم
+            </p>
+            <img class="absolute -top-4 left-0 w-1/5 h-1/4 overflow-hidden" src="/icons/dots.svg" alt="">
+
+            <div class="rounded-full w-1/5 h-1/4 xs:h-1/3 absolute translate-y-1/2 bottom-0 right-0"
+                style="background-color: rgba(141, 226, 254, 0.25);"></div>
+
+            <picture class="px-0 w-full h-auto absolute bottom-0 left-0">
+                <source srcset="/icons/wave-tab.svg" media="(min-width: 768px)">
+                <img src="/icons/wave.svg" alt="">
+            </picture>
+
+        </div>
+    </section>
+    <div class="w-full relative" style="background-color: #EAF6FF;">
+        <section id="tab-video" class="adjustMar relative hidden md:flex lg:h-550 xl:h-640 overflow-hidden items-center"
+            style="height: 490px;">
+            <div class="absolute left-12 lg:left-20 xl:left-32 top-12 w-2/5 xl:w-1/3">
+
+                <img class="mb-5 w-2/3 md:w-3/5 lg:w-1/2 mt-10" src="/icons/video-tab.svg" alt="">
+                <img class="mb-5 w-4/5 lg:w-3/5" src="/icons/line.svg" alt="">
+
+                <p class="text-right" style="color: rgba(50, 77, 120, 1);">
+                    داشتن سایت و اپلیکشن این روزها بسیار رواج پیدا کرده و با داشتن یک سایت خوب میتوانید یک کسب و کار
+                    24
+                    ساعته و
+                    پردرآمد داشته باشید اما کمتر کسی است که یک سایت خوب دارد برای داشتن یک سایت خوب یا باید سال ها
+                    تجربه کسب
+                    کنید یا هزینه های زیادی کنید اما ما اینجا با شما هستیم تا با کوله باری از تجربه با کمترین هزینه
+                    سایت شما
+                    را
+                    راه اندازی کنیم.
+
+                </p>
+
+            </div>
+            <div class="rounded-full absolute w-48 h-48 lg:w-64 lg:h-64 -top-20 -right-4"
+                style="background-color:rgba(136, 232, 253, 0.25);"></div>
+
+            <div class="rounded-full absolute w-16 h-16 lg:w-28 lg:h-28 -top-4 -right-4"
+                style="background-color: rgba(83, 81, 186, 0.04);"></div>
+
+            <div>
+                <div class="w-2/5 lg:w-5/12 h-80 lg:h-96 xl:h-104 absolute top-6 right-0"
+                    style="background-color: #EDEDED;">
+                    <img class="absolute top-1/2 m-auto right-1/2 translate-x-1/2 -translate-y-1/2"
+                        src="/images/gallery.svg">
+                    <img class="absolute -bottom-10 lg:-bottom-10 -left-32 xl:-left-44 lg:-left-36 w-2/3 h-4/5"
+                        src="/images/phone.svg">
+                </div>
+
+            </div>
+            <img class="absolute -top-20 xl:-top-28 left-0 w-1/5 h-1/4 overflow-hidden" src="/icons/dots.svg" alt="">
+
+            <div class="rounded-full w-1/5 h-1/4 xs:h-1/3 lg:h-2/5 absolute translate-y-1/3 bottom-0 left-20"
+                style="background-color: rgba(141, 226, 254, 0.25);"></div>
+
+        </section>
+
+        <picture class="px-0 absolute bottom-0 left-0">
+
+            <source class="" srcset="/icons/new-wave.svg" media="(min-width: 768px)">
+            <img class="" src="/icons/wave.svg">
+        </picture>
+    </div>
+    <section>
+        <div class="mar">
+            <div class="w-3/5 xs:w-1/2 sm:w-2/5 md:w-1/4 lg:w-1/5 xl:w-1/6 mx-auto relative mt-8">
+                <picture class="">
+                    <source class="" srcset="/icons/format-tab.svg" media="(min-width: 768px)">
+                    <img class="mb-7" src="/icons/format.svg" alt="...">
+                </picture>
+
+                <div class="md:hidden bg-lightBlue w-2/5 h-2/5 absolute left-0 -bottom-sm"> </div>
+            </div>
+            <p class="text-sm xs:text-base sm:text-lg md:text-base lg:text-sm xl:text-lg text-center"
+                style="color: rgba(91, 99, 134, 1);">
+                با توجه به نیاز خود می توانید یکی از دسته بندی های زیر را انتخاب نمایید
+            </p>
+            <main class="mt-6" x-data="{ openTab: 1 }">
+                <ul class="flex flex-row items-center list-none text-center md:w-3/4 md:mx-auto lg:w-1/2 2xl:w-2/5"
+                    style="color: rgba(56, 96, 172, 1) !important;">
+                    <li class="" x-on:click="openTab = 1" x-bind:class="{'borderBlue md:borderPurple': openTab === 1}">
+                        اسلاید شو </li>
+                    <li class="" x-on:click="openTab = 2" x-bind:class="{'borderBlue md:borderPurple': openTab === 2}">
+                        لوگوموشن </li>
+                    <li class="" x-on:click="openTab = 3" x-bind:class="{'borderBlue md:borderPurple': openTab === 3}">
+                        اینستاگرام </li>
+                    <li class="" x-on:click="openTab = 4" x-bind:class="{'borderBlue md:borderPurple': openTab === 4}">
+                        تیزرتبلیغاتی </li>
+                </ul>
+
+                <section class="mb-0 mt-14 md:my-0 flex flex-col items-center md:flex-row-reverse md:w-full
+                md:pt-0" x-cloak x-show="openTab === 1">
+                    <div class="flex flex-col items-center md:w-5/12">
+                        <img class="w-3/4 xs:w-2/3 md:w-full" src="/images/design.svg" alt="">
+                    </div>
+                    <div class="flex flex-col items-center md:items-start md:w-7/12 md:text-right md:pt-24
+                    xl:w-2/3">
+                        <picture class="my-8 md:my-3 lg:my-6 xl:my-8
+                         w-1/4 xs:w-1/5 sm:w-1/6 md:w-1/5 lg:w-1/6">
+                            <source class="" srcset="/icons/slideshowtitle-light.svg" media="(min-width: 768px)">
+                            <img class="" src="/icons/slideshowtitle.svg" alt="...">
+                        </picture>
+                        <p class="text-center px-3 xs:px-7 pb-6 md:text-right md:p-0"
+                            style="color: rgba(70, 76, 98, 1);">
+                            نرم افزاری که دارای یک کاوشگر نقشه‌‌ای بوده و امکان مشاهده پروژه به صورت نمای درختی و حرکت
+                            بین
+                            سطوح
+                            و
+                            قسمت
+                            های مختلف را فراهم می کند. با استفاده از این نرم افزار کاربردی می توان نقشه ذهنی ایده های
+                            کسب و
+                            کار
+                            را
+                            ایجاد
+                            کرد و استراتژی ها، وظایف، پروژه ها و رویداد های مختلف را برنامه ریزی نمود. علاوه بر امکان
+                            استفاده از
+                            قالب
+                            های مختلف دسته بندی شده بر اساس موضوعات و زمینه های مختلف
+                        </p>
+
+                        <button class="btn rounded-md bg-indigo md:bgPurpleDark
+                        px-5 py-2
+                        xs:px-7 xs:py-3
+                        sm:px-10 sm:py-3
+                        md:px-5 md:py-2
+                        text-white mb-16 md:mt-3 lg:mt-6 xl:mt-8">
+                            مشاهده قالب‌ها
+                        </button>
+                    </div>
+                </section>
+
+                <section x-show="openTab === 2" x-cloak>2</section>
+
+                <section x-show="openTab === 3" x-cloak>3</section>
+
+                <section x-show="openTab === 4" x-cloak>4</section>
+
+            </main>
+
+        </div>
+    </section>
+
+    <section class="relative overflow-hidden md:hidden"
+        style=" background: linear-gradient(180deg, #FEF7FF -19.27%, #EAF6FF 139.29%);">
+        <div class="mar">
+
+            <img class="px-0 w-full absolute top-0 left-0" src="/icons/up.svg" alt="">
+            <img class="w-1/2 sm:w-2/5 absolute top-0 right-1/2 translate-x-1/2" src="/images/question.svg" alt="">
+            <div class="absolute top-64 -left-20 overflow-hidden w-32 h-32 rounded-full"
+                style="background-color: rgba(253, 237, 255, 1);"></div>
+            <div class="absolute top-80 -left-24 w-80 overflow-hidden h-80 rounded-full"
+                style="background-color: rgba(241, 239, 252, 0.67);"></div>
+
+
+            <div class="mt-64 xs:mt-80">
+                <div class=" w-3/5 xs:w-1/2 sm:w-2/5 mx-auto relative mt-8">
+                    <img class="mb-9 xs:mb-12" src="/icons/faq.svg" alt="">
+                    <div class="bg-lightBlue w-full h-2/5 absolute left-0 -bottom-sm"> </div>
+                </div>
+
+                <div class="relative pb-32" x-data="{toggle:null}">
+                    <div x-on:click="toggle !== 1 ? toggle = 1 : toggle = null" class="question">
+
+                        چطور میتونم تو سایت ثبت نام کنم؟
+                        <img class="w-4 h-4" src="/icons/down-arrow.svg" alt="">
+
+                    </div>
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="reserve"
+                        x-bind:style="toggle == 1 ? 'max-height: ' + ($refs.reserve.scrollHeight + 20) + 'px' : ''">
+                        <p class="answer">
+                            هر کد تخفیف فقط یک بار قابل استفاده می‌باشد و غیر قابل فروش می‌باشد. شما می‌توانید امتیازهای
+                            دریافتی خود را در بخش حساب کاربری تبدیل به کد تخفیف کرده و در خرید بعدی خود از سایت و
+                            اپلیکیشن پرشیا از آن بهره‌مند شوید.
+                        </p>
+                    </div>
+
+
+                    <div x-on:click="toggle !== 2 ? toggle = 2 : toggle = null" class="question">
+
+                        آیا کلیپ من در وبسایت منتشر خواهد شد؟
+                        <img class="w-4 h-4" src="/icons/down-arrow.svg" alt="">
+
+                    </div>
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="reserve"
+                        x-bind:style="toggle == 2 ? 'max-height: ' + ($refs.reserve.scrollHeight + 20) + 'px' : ''">
+                        <p class="answer">
+                            هر کد تخفیف فقط یک بار قابل استفاده می‌باشد و غیر قابل فروش می‌باشد. شما می‌توانید امتیازهای
+                            دریافتی خود را در بخش حساب کاربری تبدیل به کد تخفیف کرده و در خرید بعدی خود از سایت و
+                            اپلیکیشن پرشیا از آن بهره‌مند شوید.
+                        </p>
+                    </div>
+
+
+                    <div x-on:click="toggle !== 3 ? toggle = 3 : toggle = null" class="question font-semibold">
+
+                        چطور می تونم کد تخفیف دریافت کنم؟
+                        <img class="w-4 h-4" src="/icons/down-arrow.svg" alt="">
+
+                    </div>
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="reserve"
+                        x-bind:style="toggle == 3 ? 'max-height: ' + ($refs.reserve.scrollHeight + 20) + 'px' : ''">
+                        <p class="answer">
+                            هر کد تخفیف فقط یک بار قابل استفاده می‌باشد و غیر قابل فروش می‌باشد. شما می‌توانید امتیازهای
+                            دریافتی خود را در بخش حساب کاربری تبدیل به کد تخفیف کرده و در خرید بعدی خود از سایت و
+                            اپلیکیشن پرشیا از آن بهره‌مند شوید.
+                        </p>
+                    </div>
+
+
+
+                    <div x-on:click="toggle !== 4 ? toggle = 4 : toggle = null" class="question">
+
+                        چقدر زمان میبره کلیپم حاضر شه؟
+                        <img class="w-4 h-4" src="/icons/down-arrow.svg" alt="">
+
+                    </div>
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="reserve"
+                        x-bind:style="toggle == 4 ? 'max-height: ' + ($refs.reserve.scrollHeight + 20) + 'px' : ''">
+                        <p class="answer">
+                            هر کد تخفیف فقط یک بار قابل استفاده می‌باشد و غیر قابل فروش می‌باشد. شما می‌توانید امتیازهای
+                            دریافتی خود را در بخش حساب کاربری تبدیل به کد تخفیف کرده و در خرید بعدی خود از سایت و
+                            اپلیکیشن پرشیا از آن بهره‌مند شوید.
+                        </p>
+                    </div>
+
+
+                    <div x-on:click="toggle !== 5 ? toggle = 5 : toggle = null" class="question">
+
+                        آیا از طریق کلیپام میشه درآمدزایی کرد؟
+                        <img class="w-4 h-4" src="/icons/down-arrow.svg" alt="">
+
+                    </div>
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="reserve"
+                        x-bind:style="toggle == 5 ? 'max-height: ' + ($refs.reserve.scrollHeight + 20) + 'px' : ''">
+                        <p class="answer">
+                            هر کد تخفیف فقط یک بار قابل استفاده می‌باشد و غیر قابل فروش می‌باشد. شما می‌توانید امتیازهای
+                            دریافتی خود را در بخش حساب کاربری تبدیل به کد تخفیف کرده و در خرید بعدی خود از سایت و
+                            اپلیکیشن پرشیا از آن بهره‌مند شوید.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <img class="absolute bottom-0 right-0" src="/icons/down.svg" alt="">
+
+    </section>
+
+
+    <div class="w-full relative overflow-hidden z-30" style="background-color: #EAF6FF;">
+        <section id="tab-faq" class="adjustMar relative hidden md:flex overflow-hidden items-center"
+            style="margin-top: 0 !important;">
+            <img class="absolute -top-14 lg:-top-14 xl:-top-16 left-0 w-1/5 h-1/4 overflow-hidden"
+                src="/icons/purple-dot.svg" alt="">
+
+
+            <div class="rounded-full absolute
+             w-72 h-72 -top-16 -right-16
+             lg:w-80 lg:h-80 lg:-right-20" style="background-color:rgba(211, 241, 255, 0.26);">
+            </div>
+
+            <div class="rounded-full absolute 
+            w-36 h-36 -top-7 -right-16
+            lg:w-44 lg:h-44 lg:-top-12 lg:-right-24" style="background-color: rgba(211, 241, 255, 0.6);"></div>
+
+            <!-- <div class="rounded-full w-1/5 h-1/4 xs:h-1/3 lg:h-2/5 absolute translate-y-1/2 bottom-0 left-20"
+                style="background-color: rgba(209, 199, 252, 0.07)"></div> -->
+
+
+            <div class="flex flex-col w-full mt-9">
+
+                <img class="mb-7 w-1/5 lg:w-1/5 xl:w-13per mx-auto relative" src="/icons/tab-faq.svg" alt="">
+
+                <p class="reg text-sm xs:text-base sm:text-lg md:text-base lg:text-sm xl:text-base 4xl:text-xl text-center mb-14"
+                    style="color: rgba(91, 99, 134, 1);">
+                    شما می توانید پاسخ برخی از پرسش های خود را اینجا بیابید </p>
+
+
+                <div class="relative w-3/4 xl:w-7/12 mx-auto pb-20" x-data="{toggle:1}">
+
+                    <div x-on:click="toggle !== 1 ? toggle = 1 : toggle = null" class="question md:changeColor">
+
+                        <img x-show="toggle !== 1" class="ml-4" src="/icons/plus.svg" alt="">
+                        <img x-show="toggle === 1" x-cloak class="ml-4" src="/icons/minus.svg" alt="">
+
+                        چطور میتونم داخل سایت ثبت نام کنم؟
+
+                    </div>
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="reserve"
+                        x-bind:style="toggle == 1 ? 'max-height: ' + ($refs.reserve.scrollHeight + 20) + 'px' : ''">
+                        <p class="answer">
+                            هر کد تخفیف فقط یک بار قابل استفاده می‌باشد و غیر قابل فروش می‌باشد. شما می‌توانید امتیازهای
+                            دریافتی خود را در بخش حساب کاربری تبدیل به کد تخفیف کرده و در خرید بعدی خود از سایت و
+                            اپلیکیشن پرشیا از آن بهره‌مند شوید.
+                        </p>
+                    </div>
+
+
+                    <div x-on:click="toggle !== 2 ? toggle = 2 : toggle = null" class="question md:changeColor">
+
+
+                        <img x-show="toggle !== 2" class="ml-4" src="/icons/plus.svg" alt="">
+                        <img x-show="toggle === 2" x-cloak class="ml-4" src="/icons/minus.svg" alt="">
+                        آیا تصاویر و کلیپ های من در وبسایت منتشر خواهد شد؟
+
+                    </div>
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="reserve"
+                        x-bind:style="toggle == 2 ? 'max-height: ' + ($refs.reserve.scrollHeight + 20) + 'px' : ''">
+                        <p class="answer">
+                            هر کد تخفیف فقط یک بار قابل استفاده می‌باشد و غیر قابل فروش می‌باشد. شما می‌توانید امتیازهای
+                            دریافتی خود را در بخش حساب کاربری تبدیل به کد تخفیف کرده و در خرید بعدی خود از سایت و
+                            اپلیکیشن پرشیا از آن بهره‌مند شوید.
+                        </p>
+                    </div>
+
+
+                    <div x-on:click="toggle !== 3 ? toggle = 3 : toggle = null" class="question md:changeColor">
+
+
+                        <img x-show="toggle !== 3" class="ml-4" src="/icons/plus.svg" alt="">
+                        <img x-show="toggle === 3" x-cloak class="ml-4" src="/icons/minus.svg" alt="">
+                        چطور می تونم کد تخفیف دریافت کنم؟
+
+                    </div>
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="reserve"
+                        x-bind:style="toggle == 3 ? 'max-height: ' + ($refs.reserve.scrollHeight + 20) + 'px' : ''">
+                        <p class="answer">
+                            هر کد تخفیف فقط یک بار قابل استفاده می‌باشد و غیر قابل فروش می‌باشد. شما می‌توانید امتیازهای
+                            دریافتی خود را در بخش حساب کاربری تبدیل به کد تخفیف کرده و در خرید بعدی خود از سایت و
+                            اپلیکیشن پرشیا از آن بهره‌مند شوید.
+                        </p>
+                    </div>
+
+
+
+                    <div x-on:click="toggle !== 4 ? toggle = 4 : toggle = null" class="question md:changeColor">
+
+
+                        <img x-show="toggle !== 4" class="ml-4" src="/icons/plus.svg" alt="">
+                        <img x-show="toggle === 4" x-cloak class="ml-4" src="/icons/minus.svg" alt="">
+                        چقدر طول میکشه کلیپم حاضر شه؟
+
+                    </div>
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="reserve"
+                        x-bind:style="toggle == 4 ? 'max-height: ' + ($refs.reserve.scrollHeight + 20) + 'px' : ''">
+                        <p class="answer">
+                            هر کد تخفیف فقط یک بار قابل استفاده می‌باشد و غیر قابل فروش می‌باشد. شما می‌توانید امتیازهای
+                            دریافتی خود را در بخش حساب کاربری تبدیل به کد تخفیف کرده و در خرید بعدی خود از سایت و
+                            اپلیکیشن پرشیا از آن بهره‌مند شوید.
+                        </p>
+                    </div>
+
+
+                    <div x-on:click="toggle !== 5 ? toggle = 5 : toggle = null" class="question md:changeColor">
+
+
+                        <img x-show="toggle !== 5" class="ml-4" src="/icons/plus.svg" alt="">
+                        <img x-show="toggle === 5" x-cloak class="ml-4" src="/icons/minus.svg" alt="">
+                        هزینه ساخت کلیپ چنده؟
+
+                    </div>
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="reserve"
+                        x-bind:style="toggle == 5 ? 'max-height: ' + ($refs.reserve.scrollHeight + 20) + 'px' : ''">
+                        <p class="answer">
+                            هر کد تخفیف فقط یک بار قابل استفاده می‌باشد و غیر قابل فروش می‌باشد. شما می‌توانید امتیازهای
+                            دریافتی خود را در بخش حساب کاربری تبدیل به کد تخفیف کرده و در خرید بعدی خود از سایت و
+                            اپلیکیشن پرشیا از آن بهره‌مند شوید.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <picture class="px-0 absolute bottom-0 left-0">
+
+            <source class="" srcset="/icons/new-wave.svg" media="(min-width: 768px)">
+            <img class="" src="/icons/wave.svg">
+        </picture>
+
+
+        <!-- circle -->
+        <!-- <div class="rounded-full absolute -left-36 -bottom-20 bg-transparent
+        border-solid border-40 border-orange-500 w-96 h-96 overflow-hidden z-30"></div> -->
+
+    </div>
+
+    <div class="w-full relative overflow-hidden md:mt-16 lg:mt-16 xl:mt-20 z-30">
+        <section class="px-9 xs:px-10 sm:px-16 md:adjustMargin relative overflow-hidden">
+
+            <div class="absolute overflow-hidden
+            w-80 h-80 xs:w-96 xs:h-96 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-100 xl:h-100 
+            -right-48 xs:-right-52 md:-right-52 lg:-right-64 
+            top-0 lg:top-10 xl:top-2
+            rounded-full -z-50" style="background-color: rgba(252, 245, 227, 1);"></div>
+
+            <div class="w-920 xs:w-2/5 sm:w-1/3 md:w-1/5 xl:w-13per mx-auto relative my-10">
+                <picture class="mb-7 xl:mt-9 md:mb-20 lg:mb-32">
+                    <source class="" srcset="/icons/tab-article.svg" media="(min-width: 768px)">
+                    <img class="" src="/icons/article.svg">
+                </picture>
+
+                <div class="md:hidden bg-lightBlue w-1/2 h-2/5 absolute left-0 -bottom-sm"> </div>
+            </div>
+
+            <div
+                class="z-30 relative bg-white mb-20 xs:mb-32 md:w-full md:mx-auto md:flex xl:w-11/12 xl:px-3 xl:bg-transparent">
+                <div class="bg-white w-full p-2 xs:p-3 mb-6 xs:mb-8 md:mb-0 md:p-3 xl:p-4 2xl:p-5 md:w-1/3 md:ml-4 xl:ml-8"
+                    style="box-shadow: -2px 4px 12px rgba(24, 24, 24, 0.08);">
+                    <img src="/images/1.svg" class="w-full" alt="">
+                    <p class="pt-4 pb-3 xs:text-xl md:text-base md:text-center lg:text-lg 2xl:text-xl med"
+                        style="color: rgba(24, 24, 24, 1);">
+                        عنوان
+                        <span
+                            class="md:hidden pt-4 pb-3 xs:text-xl md:text-base md:text-center lg:text-lg 2xl:text-xl med"
+                            style="color: rgba(24, 24, 24, 1);">
+                            نمایشی
+                        </span>
+                        مقاله مورد نظر شما
+                    </p>
+                </div>
+
+                <div class="w-full p-2 xs:p-3 mb-6 xs:mb-8 md:mb-0 md:p-3 xl:p-4 2xl:p-5 md:w-1/3 md:ml-4 xl:ml-8"
+                    style="box-shadow: -2px 4px 12px rgba(24, 24, 24, 0.08);">
+                    <img src="/images/2.svg" class="w-full" alt="">
+                    <p class="pt-4 pb-3 xs:text-xl med md:text-base lg:text-lg 2xl:text-xl md:text-center"
+                        style="color: rgba(24, 24, 24, 1);">
+                        عنوان
+                        <span
+                            class="md:hidden pt-4 pb-3 xs:text-xl md:text-base md:text-center lg:text-lg 2xl:text-xl med"
+                            style="color: rgba(24, 24, 24, 1);">
+                            نمایشی
+                        </span>
+                        مقاله مورد نظر شما
+                    </p>
+                </div>
+
+                <div class="w-full p-2 xs:p-3 mb-6 xs:mb-8 md:mb-0 md:p-3 xl:p-4 2xl:p-5 md:w-1/3"
+                    style="box-shadow: -2px 4px 12px rgba(24, 24, 24, 0.08);">
+                    <img src="/images/3.svg" class="w-full" alt="">
+                    <p class="pt-4 pb-3 xs:text-xl med md:text-base lg:text-lg 2xl:text-xl md:text-center"
+                        style="color: rgba(24, 24, 24, 1);">
+                        عنوان
+                        <span
+                            class="md:hidden pt-4 pb-3 xs:text-xl md:text-base md:text-center lg:text-lg 2xl:text-xl med"
+                            style="color: rgba(24, 24, 24, 1);">
+                            نمایشی
+                        </span>
+                        مقاله مورد نظر شما
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <section class="relative" style="background-color: rgba(231, 240, 253, 1); margin-bottom: 0 !important;">
+
+        <picture class="px-0 w-full absolute left-0" style="bottom: 99% !important;">
+            <source class="mx-auto w-full" srcset="/icons/desk-wave.svg" media="(min-width: 768px)">
+            <img class="mx-auto w-full" src="/icons/last-wave.svg" alt="mobile">
+        </picture>
+          
+        <div class="" style="max-width: 1450px !important; margin-right: auto; margin-left: auto;">
+ 
+            <div class="flex flex-row mx-4 xs:mx-9 md:mx-8 md:pt-11 lg:pt-16 xl:pt-24 2xl:pt-32">
+                <div class="flex flex-col w-1/2 pt-7 md:hidden">
+                    <p class="mb-5 text-lg xs:text-2xl reg" style="color: rgba(56, 96, 172, 1);">
+                        صفحات سایت
+                    </p>
+                    <ul class="list-none" style="color: rgba(67, 102, 126, 1);">
+                        <li class="mb-2 xs:text-xl reg">
+                            قالب ها
+                        </li>
+
+                        <li class="mb-2 xs:text-xl reg">
+                            تماس با ما
+                        </li>
+
+                        <li class="mb-2 reg xs:text-xl">
+                            درباره ما
+                        </li>
+
+                        <li class="mb-2 reg xs:text-xl">
+                            پشتیبانی
+                        </li>
+
+                        <li class="mb-2 reg xs:text-xl">
+                            وبلاگ
+                        </li>
+                    </ul>
+                </div>
+                <div class="hidden md:flex md:flex-col w-1/2 md:w-2/5 pt-7 md:ml-9 lg:ml-14">
+                    <a href="#" class="mb-5">
+                        <img src="/images/logo.svg" alt="" class="w-2/5">
+                    </a>
+                    <div class="leading-7 xs:leading-9 reg xs:text-xl md:text-base lg:text-xl md:changeColorToBlack md:light"
+                        style="color: rgba(67, 102, 126, 1);">
+                        شرکت کارگزاری بانک تجارت از ابتدای خرداد ماه 1373 فعالیت خود را با عضویت در سازمان بورس و
+                        اوراق بهادار آغاز نمود.
+
+                    </div>
+
+                </div>
+
+                <div class="hidden md:flex md:flex-col md:w-1/4 pt-7">
+                    <p class="mb-5 text-lg xs:text-2xl md:text-lg lg:text-2xl md:font-bold reg" style="color: rgba(43, 35, 80, 1);">
+                        لینک‌های مرتبط
+                    </p>
+                    <ul class="list-none" style="color: rgba(67, 102, 126, 1);">
+                        <li class="mb-2 xs:text-xl md:text-base  lg:text-xl reg md:light md:changeColorToBlack">
+                            کارگزاری بانک تجارت
+                        </li>
+
+                        <li class="mb-2 xs:text-xl md:text-base  lg:text-xl reg md:light md:changeColorToBlack">
+                            سامانه معاملات آنلاین
+                        </li>
+
+                        <li class="mb-2 reg md:light xs:text-xl md:text-base lg:text-xl md:changeColorToBlack">
+                            سامانه معاملات آنلاین
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="flex flex-col w-1/2 md:w-2/5 pt-7 md:mr-3 lg:mr-6">
+
+                    <p class="mb-5 text-lg xs:text-2xl md:text-lg lg:text-2xl reg md:font-bold md:changeColorToBlack"
+                        style="color: rgba(56, 96, 172, 1);">
+                        ارتباط با ما
+                    </p>
+                    <div class="leading-7 xs:leading-9 reg xs:text-xl md:text-base lg:text-xl md:changeColorToBlack md:light"
+                        style="color: rgba(67, 102, 126, 1);">
+                        مشهد - میدان شهدا, ساختمان میلاد, طبقه -۱
+                        <br>
+                        شماره تماس :
+                        <br>
+                        ۰۵۱۳-۸۴۵۶۲۳۶
+                    </div>
+
+                </div>
+            </div>
+            <ul class="flex flex-row list-none w-2/5 md:w-1/4 xl:w-13per mx-auto mt-7 lg:mt-16 xl:mt-28">
+
+                <li class="w-1/4">
+                    <picture class="">
+                        <source class="" srcset="/icons/tab-linkedin.svg" media="(min-width: 768px)">
+                        <img class="mx-auto w-4/5 xs:w-2/3" src="/icons/linkedin.svg" alt="">
+                    </picture>
+                </li>
+
+                <li class="w-1/4">
+                    <picture class="">
+                        <source class="" srcset="/icons/tab-aparat.svg" media="(min-width: 768px)">
+                        <img class="mx-auto w-4/5 xs:w-2/3" src="/icons/aparat.svg" alt="">
+                    </picture>
+                </li>
+
+                <li class="w-1/4">
+                    <picture class="">
+                        <source class="" srcset="/icons/tab-telegram.svg" media="(min-width: 768px)">
+                        <img class="mx-auto w-4/5 xs:w-2/3" src="/icons/telegram.svg" alt="">
+                    </picture>
+                </li>
+
+                <li class="w-1/4">
+                    <picture class="">
+                        <source class="" srcset="/icons/tab-instagram.svg" media="(min-width: 768px)">
+                        <img class="mx-auto w-4/5 xs:w-2/3" src="/icons/instagram.svg" alt="">
+                    </picture>
+                </li>
+
+            </ul>
+            <div class="text-center text-xs xs:text-lg md:text-sm lg:text-base xl:text-lg py-3 lg:pt-5 lg:pb-9 reg"
+                style="color: rgba(67, 102, 126, 1);">
+                طراحی و توسعه توسط شرکت پردازش اطلاعات آوید
+            </div>
+
+        </div>
+    </section>
+    <script defer src="https://unpkg.com/alpinejs-breakpoints"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+
+    </script>
 </body>
+
 </html>

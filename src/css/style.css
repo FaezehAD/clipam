@@ -1,0 +1,102 @@
+@font-face {
+  font-family: iransansx-light;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../fonts/fonts/woff/IRANSansX-Light.woff") format("woff"),
+    url("../../fonts/woff2/IRANSansX-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: iransansx-regular;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/fonts/woff/IRANSansX-regular.woff") format("woff"),
+    url("../../fonts/woff2/IRANSansX-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: iransansx-medium;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../fonts/fonts/woff/IRANSansX-medium.woff") format("woff"),
+    url("../../fonts/fonts/woff2/IRANSansX-medium.woff2") format("woff2");
+}
+
+*,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: iransansx-light;
+  font-size: 16px;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+
+@media (min-width: 768px) {
+  .md\:button-shadow {
+    filter: drop-shadow(0px 2px 4px #627ade) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:h-550 {
+    height: 550px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:h-640 {
+    height: 640px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:borderPurple {
+    border-color: rgba(119, 141, 232, 1) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:bgPurpleDark {
+    background-color: rgba(98, 122, 222, 1) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:changeColor {
+    color: #151618 !important;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:adjustMargin {
+    margin: auto !important;
+    width: 100% !important;
+    max-width: 1450px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:w-13per {
+    width: 13%;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .md\:changeColorToBlack {
+    color: rgba(43, 35, 80, 1) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:light {
+    font-family: iransansx-light !important;
+  }
+}
+
